@@ -1,9 +1,11 @@
 # Gasoly
 A miles per gallon tracking tool with a side of price-at-the-pump history
 
-## 2022.5.13 - oops
+## 2022.5.13 - oops and yey
 Left something in uri I shouldn't have. Fixed now though.
 
+Basically got the form done and routed to post the data
+to mongoDB. Very exciting.
 
 ## 2022.5.10 - some updates already
 
