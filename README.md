@@ -1,6 +1,10 @@
 # Gasoly
 A miles per gallon tracking tool with a side of price-at-the-pump history
 
+## 2022.5.23 some progress
+The uri tedium continues, but can now create
+JSON data that sadly doesn't go anywhere yet. 
+
 ## 2022.5.13 - oops and yey
 Left something in uri I shouldn't have. Fixed now though.
 

@@ -1,8 +1,20 @@
 import Head from 'next/head'
-import clientPromise from '../lib/mongodb'
+// import clientPromise from '../lib/mongodb'
+// import { MongoClient, ServerApiVersion } from '../lib/mongodb';
+
+// const { MongoClient, ServerApiVersion } = require('mongodb');
+// const uri = "mongodb+srv://samson-ej:<password>@cluster0.6qbib.mongodb.net/?retryWrites=true&w=majority";
+// const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+// client.connect(err => {
+//   const collection = client.db("test").collection("devices");
+//   // perform actions on the collection object
+//   client.close();
+// });
+
 
 export default function Home({ isConnected }) {
   return (
+    
     <div className='container'>
       <Head>
         <title>Gasoly</title>
@@ -23,7 +35,7 @@ export default function Home({ isConnected }) {
           </h2>
         )}
 
-        <form action='/api/form' method='post'>
+        <form action='/pages/js-form' method='post'>
           <label for='miles'>Total Miles: </label>
           <input
             type='number'
