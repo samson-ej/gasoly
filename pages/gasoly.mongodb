@@ -1,0 +1,39 @@
+// MongoDB Playground
+// Use Ctrl+Space inside a snippet or a string literal to trigger completions.
+
+const database = 'gasoly';
+const collection = '2019_to_2021';
+
+// Create a new database.
+use(database);
+
+// Create a new collection.
+db.createCollection(collection);
+
+db.collection.drop();
+
+db.collection.insertMany([
+  { '_id': 1, 'miles': 264.5, 'price': 2.499, 'volume': 9.824, 'date': new Date('2019-11-24') },
+  { '_id': 2, 'miles': 223.1, 'price': 2.299, 'volume': 8.814, 'date': new Date('2019-12-22') },
+  { '_id': 3, 'miles': 281.3, 'price': 2.269, 'volume': 10.281, 'date': new Date('2020-02-21') },
+  { '_id': 4, 'miles': 246.7, 'price': 1.249, 'volume': 9.551, 'date': new Date('2020-06-04') },
+  { '_id': 5, 'miles': 224.4, 'price': 1.629, 'volume': 9.524, 'date': new Date('2020-10-22') },
+  { '_id': 6, 'miles': 129.6, 'price': 2.239, 'volume': 4.260, 'date': new Date('2021-02-28') },
+  { '_id': 7, 'miles': 300.8, 'price': 2.229, 'volume': 9.734, 'date': new Date('2021-04-21') },
+  { '_id': 8, 'miles': 195.6, 'price': 2.799, 'volume': 7.213, 'date': new Date('2021-06-29') },
+  { '_id': 9, 'miles': 198.8, 'price': 2.899, 'volume': 7.265, 'date': new Date('2021-10-19') },
+]);
+
+// Run a find command to view items between June 2020 and November 2020.
+db.collection.find({ date: { $gte: new Date('2020-06-01'), $lt: new Date('2020-10-31') } });
+
+// Build an aggregation to view total fuel purchases for 2021.
+const aggregation = [
+  { $match: { date: { $gte: new Date('2021-01-01'), $lt: new Date('2022-01-01') } } },
+  { $group: { _id: '$date', totalSaleAmount: { $sum: { $multiply: [ '$price', '$volume' ] } } } }
+];
+
+// Run the aggregation and open a cursor to the results.
+// Use toArray() to exhaust the cursor to return the whole result set.
+// You can use hasNext()/next() to iterate through the cursor page by page.
+db.collection.aggregate(aggregation);

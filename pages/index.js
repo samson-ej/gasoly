@@ -3,10 +3,10 @@ import Head from 'next/head'
 // import { MongoClient, ServerApiVersion } from '../lib/mongodb';
 
 // const { MongoClient, ServerApiVersion } = require('mongodb');
-// const uri = "mongodb+srv://samson-ej:<password>@cluster0.6qbib.mongodb.net/?retryWrites=true&w=majority";
+// const uri = 'mongodb+srv://samson-ej:<password>@cluster0.6qbib.mongodb.net/test:27017/?retryWrites=true&w=majority';
 // const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 // client.connect(err => {
-//   const collection = client.db("test").collection("devices");
+//   const collection = client.db('gasoly').collection('2019_to_2021');
 //   // perform actions on the collection object
 //   client.close();
 // });
@@ -35,7 +35,7 @@ export default function Home({ isConnected }) {
           </h2>
         )}
 
-        <form action='/pages/js-form' method='post'>
+        <form action='/api/form' method='post'>
           <label for='miles'>Total Miles: </label>
           <input
             type='number'

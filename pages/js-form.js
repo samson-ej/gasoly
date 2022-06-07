@@ -1,14 +1,14 @@
-// import clientPromise from '../lib/mongodb'
-// import { MongoClient, ServerApiVersion } from '../lib/mongodb';
+import clientPromise from '../lib/mongodb'
+import { MongoClient, ServerApiVersion } from '../lib/mongodb';
 
 // const { MongoClient, ServerApiVersi} = require('mongodb');
-// const uri = "mongodb+srv://samson-ej:@cluster0.6qbib.mongodb.net/?retryWrites=true&w=majority";
-// const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
-// client.connect(err => {
-//   const collection = client.db("test").collection("devices");
-//   // perform actions on the collection object
-//   client.close();
-// });
+const uri = "mongodb+srv://samson-ej:<password>@cluster0.6qbib.mongodb.net/?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
 
 export default function JSbasedForm() {
     const handleSubmit = async (event) => {
@@ -23,7 +23,7 @@ export default function JSbasedForm() {
 
         const JSONdata = JSON.stringify(data)
 
-        const endpoint = 'api/form'
+        const endpoint = 'pages/js-form'
 
         const options = {
             method: 'POST',
